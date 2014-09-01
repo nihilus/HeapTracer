@@ -1,0 +1,17 @@
+You can either use ntsd (from Debugging Tools for Windows, not default install)
+to create logs, for example:
+
+C:> ntsd -cf hd.ntsd ping 192.168.1.1
+
+Or attaching to an existing process with -p or -pn.
+
+Or you can inject hookgera.dll into a running process using LoadDll.exe from
+LoadDll.zip taken from http://www.codeguru.com/Cpp/W-P/dll/article.php/c105 
+
+C:> LoadDll /L <PID> c:\full\path\to\hoogera.dll
+
+This will create a file named output.<pid>.log which you can use with HeapDraw
+as if it was ltrace format. (hd -t ltrace <output.pid.log)
+
+The command line and usage of the windows version is the same of the linux
+version, see the README for it.

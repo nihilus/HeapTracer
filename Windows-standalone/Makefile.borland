@@ -1,0 +1,14 @@
+!include c:\borland\bcc55\examples\stdlib\makeincl.inc
+
+CPPFLAGS = $(CPPFLAGS) -Ic:\borland\bcc55\include
+CPPFLAGS = -v -M -Ic:\borland\bcc55\include
+
+OBJS = main.obj draw.obj Heap.obj
+
+all: hd.exe
+
+hd.exe: $(OBJS)
+	$(CPP) $(CPPFLAGS) -e$@ $(OBJS)
+
+.cpp.obj:
+	$(CPP) $(CPPFLAGS) -c {$? }

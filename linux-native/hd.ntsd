@@ -1,0 +1,25 @@
+*bp ntdll!RtlReAllocateHeap ".echo ntdll!RtlReAllocateHeap; g"
+*bp ntdll!RtlAllocateHeap ".echo ntdll!RtlAllocateHeap; g"
+*bp ntdll!RtlFreeHeap ".echo ntdll!RtlFreeHeap; g"
+*bp ntdll!RtlCreateHeap ".echo ntdll!RtlCreateHeap; g"
+*bp ntdll!RtlDestroyHeap ".echo ntdll!RtlDestroyHeap; g"
+*bp ntdll!RtlZeroHeap ".echo ntdll!RtlZeroHeap; g"
+*bp ntdll!RtlExtendHeap ".echo ntdll!RtlExtendHeap"
+
+*bp KERNEL32!HeapCreate ".echo KERNEL32!HeapCreate ; g"
+*bp KERNEL32!HeapDestroy .echo KERNEL32!HeapDestroy; g"
+*bp KERNEL32!HeapExtend ".echo KERNEL32!HeapExtend; g"
+*bp KERNEL32!HeapAlloc ".echo KERNEL32!HeapAlloc; g"
+*bp KERNEL32!HeapFree ".echo KERNEL32!HeapFree; g"
+*bp KERNEL32!HeapReAlloc ".echo KERNEL32!HeapReAlloc; g"
+
+
+
+bp ntdll!RtlAllocateHeap ".echo <ntdll!RtlAllocateHeap>; r $tid;.echotime; dd esp l 5; g $ra; r eax; .echo </ntdll!RtlAllocateHeap>; g"
+bp ntdll!RtlReAllocateHeap ".echo <ntdll!RtlReAllocateHeap>; r $tid;.echotime; dd esp l 5; g $ra; r eax; .echo </ntdll!RtlReAllocateHeap>; g"
+bp ntdll!RtlFreeHeap ".echo <ntdll!RtlFreeHeap>; r $tid;.echotime; dd esp l 5; g $ra; r eax; .echo </ntdll!RtlFreeHeap>; g"
+
+*bd *
+.logopen l
+g
+
