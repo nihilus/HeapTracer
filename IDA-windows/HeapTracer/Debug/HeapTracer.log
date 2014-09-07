@@ -1,0 +1,8 @@
+﻿  Draw.cpp
+c:\hex-rays.ida.pro.advanced.v6.5\idasdk\plugins\heaptracer\ida-windows\heaptracer\draw.cpp(1): fatal error C1083: Cannot open include file: 'ida.hpp': No such file or directory
+  Heap.cpp
+c:\hex-rays.ida.pro.advanced.v6.5\idasdk\plugins\heaptracer\ida-windows\heaptracer\heap.hpp(4): fatal error C1083: Cannot open include file: 'ida.hpp': No such file or directory
+  HeapChunk.cpp
+  HeapTracer.cpp
+c:\hex-rays.ida.pro.advanced.v6.5\idasdk\plugins\heaptracer\ida-windows\heaptracer\heaptracer.cpp(5): fatal error C1083: Cannot open include file: 'ida.hpp': No such file or directory
+  Generating Code...
